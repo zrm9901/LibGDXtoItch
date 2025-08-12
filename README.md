@@ -1,3 +1,4 @@
+```
 tasks.register("Push") {
   dependsOn('lwjgl3:packageLinuxX64', 'lwjgl3:packageWinX64')
 
@@ -32,3 +33,5 @@ tasks.register("Push") {
       commandLine "butler", "push", "${buildDir}\\source.zip", "$userGame:source-code"
     }
   }
+}
+```
