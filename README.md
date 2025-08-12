@@ -16,5 +16,19 @@ tasks.register("Push") {
     exec {
       commandLine "butler", "push", win, "$userGame:Windows"
     }
+
+    exec {
+      commandLine "git", "init"
+    }
+
+    exec {
+      commandLine "git", "add", "."
+    }
+    exec {
+      commandLine "git", "archive", "-o", "${buildDir}\\source.zip", "HEAD"
+    }
+
+    exec {
+      commandLine "butler", "push", "${buildDir}\\source.zip", "$userGame:source-code"
+    }
   }
-}
